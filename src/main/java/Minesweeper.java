@@ -324,7 +324,7 @@ public class Minesweeper extends JFrame {
         if (Score < 800) {
             return;
         } else {
-            subtractScore(0);
+            subtractScore(800);
 
             for (int r = 0; r < ROWS; r++) {
                 if (r >= 0 && r < ROWS && col >= 0 && col < COLS) {

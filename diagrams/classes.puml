@@ -1,0 +1,218 @@
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class Main {
+  +Main : class
+  -void : static
+  +void : static
+}
+
+class Minesweeper {
+  +Minesweeper : class
+  -final : static
+  -final : static
+  -safelyRevealedMines : int
+  -Schwierigkeit : void
+  -Tile : final
+  -firstClick : boolean
+  -gameOver : boolean
+  -tilesRevealed : int
+  -flagsPlaced : int
+  -Score : int
+  -JLabel : final
+  -JPanel : final
+  -JLabel : final
+  -hoveredTile : Tile
+  -gameTimer : Timer
+  -elapsedTime : int
+  +keyPressed : void
+  -startTimer : void
+  +actionPerformed : void
+  +getScore : int
+  -addScore : void
+  -subtractScore : void
+  -placeMines : void
+  -countAdjacentMines : int
+  -revealTile : void
+  -safeRevealTile : void
+  -safeRevealTileX2 : void
+  -safeRevealTileX3 : void
+  -safeRevealAdjacentTiles : void
+  -safeRevealVerticalColumn : void
+  -gameOver : void
+  -Tile : class
+  +mousePressed : void
+  +mouseEntered : void
+  +mouseExited : void
+  +reveal : void
+  +toggleFlag : void
+  -getColorForNumber : Color
+  +void : static
+  +run : void
+  -Schwierigkeit() : void
+  +keyPressed() : void
+  -startTimer() : void
+  +actionPerformed() : void
+  +getScore() : int
+  -addScore() : void
+  -subtractScore() : void
+  -placeMines() : void
+  -countAdjacentMines() : int
+  -revealTile() : void
+  -safeRevealTile() : void
+  -safeRevealTileX2() : void
+  -safeRevealTileX3() : void
+  -safeRevealAdjacentTiles() : void
+  -safeRevealVerticalColumn() : void
+  -gameOver() : void
+  +mousePressed() : void
+  +mouseEntered() : void
+  +mouseExited() : void
+  +reveal() : void
+  +toggleFlag() : void
+  -getColorForNumber() : Color
+  +run() : void
+}
+
+JFrame <|-- Minesweeper
+class MinesweeperLogic {
+  +MinesweeperLogic : class
+  -final : static
+  -final : static
+  -final : static
+  -final : static
+  -final : static
+  -final : static
+  -mines : int
+  -safelyRevealedMines : int
+  -Tile : final
+  -firstClick : boolean
+  -gameOver : boolean
+  -tilesRevealed : int
+  -flagsPlaced : int
+  -score : int
+  -hoveredTile : Tile
+  -gameTimer : Timer
+  -remainingTime : int
+  -elapsedTime : int
+  -String : final
+  -ui : MinesweeperUI
+  -initializeBoard : void
+  -selectDifficulty : void
+  +handleTileClick : void
+  -placeMines : void
+  -countAdjacentMines : int
+  -revealTile : void
+  -gameOver : void
+  -startTimer : void
+  +actionPerformed : void
+  +handlePowerup : void
+  -safeRevealTile : void
+  -safeRevealAdjacentTiles : void
+  -safeRevealVerticalColumn : void
+  -checkWinCondition : void
+  +isGameOver : boolean
+  +getMines : int
+  +getFlagsPlaced : int
+  +incrementFlagsPlaced : void
+  +decrementFlagsPlaced : void
+  +setHoveredTile : void
+  +getBoard : Tile[][]
+  +getScore : int
+  +addScore : void
+  +subtractScore : void
+  +getElapsedTime : int
+  +getRemainingTime : int
+  +updateStatusLabel : void
+  +getSafelyRevealedMines : int
+  -initializeBoard() : void
+  -selectDifficulty() : void
+  +handleTileClick() : void
+  -placeMines() : void
+  -countAdjacentMines() : int
+  -revealTile() : void
+  -gameOver() : void
+  -startTimer() : void
+  +actionPerformed() : void
+  +handlePowerup() : void
+  -safeRevealTile() : void
+  -safeRevealAdjacentTiles() : void
+  -safeRevealVerticalColumn() : void
+  -checkWinCondition() : void
+  +isGameOver() : boolean
+  +getMines() : int
+  +getFlagsPlaced() : int
+  +incrementFlagsPlaced() : void
+  +decrementFlagsPlaced() : void
+  +setHoveredTile() : void
+  +getBoard() : Tile[][]
+  +getScore() : int
+  +addScore() : void
+  +subtractScore() : void
+  +getElapsedTime() : int
+  +getRemainingTime() : int
+  +updateStatusLabel() : void
+  +getSafelyRevealedMines() : int
+}
+
+class MinesweeperUI {
+  +MinesweeperUI : class
+  -JLabel : final
+  -JLabel : final
+  -JPanel : final
+  -game : MinesweeperLogic
+  +keyPressed : void
+  -initializeBoard : void
+  +updateStatusLabel : void
+  +updateTimerLabel : void
+  +restartGame : void
+  +keyPressed() : void
+  -initializeBoard() : void
+  +updateStatusLabel() : void
+  +updateTimerLabel() : void
+  +restartGame() : void
+}
+
+JFrame <|-- MinesweeperUI
+class Tile {
+  +Tile : class
+  -row : int
+  -col : int
+  -isMine : boolean
+  -isRevealed : boolean
+  -isFlagged : boolean
+  -adjacentMines : int
+  -game : MinesweeperLogic
+  +mousePressed : void
+  +mouseEntered : void
+  +mouseExited : void
+  +reveal : void
+  +toggleFlag : void
+  -getColorForNumber : Color
+  +isMine : boolean
+  +setMine : void
+  +isRevealed : boolean
+  +isFlagged : boolean
+  +getAdjacentMines : int
+  +setAdjacentMines : void
+  +getRow : int
+  +getCol : int
+  +mousePressed() : void
+  +mouseEntered() : void
+  +mouseExited() : void
+  +reveal() : void
+  +toggleFlag() : void
+  -getColorForNumber() : Color
+  +isMine() : boolean
+  +setMine() : void
+  +isRevealed() : boolean
+  +isFlagged() : boolean
+  +getAdjacentMines() : int
+  +setAdjacentMines() : void
+  +getRow() : int
+  +getCol() : int
+}
+
+JButton <|-- Tile
+@enduml
