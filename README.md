@@ -17,3 +17,6 @@ This project includes a Gradle wrapper setup (`gradlew` and `gradlew.bat`), whic
 ### Windows
 1. Open Command Prompt or PowerShell and navigate to the project's root directory.
 2. Start the application by running the provided batch script: `gradlew.bat run`.
+
+
+![Preview](image.png)
