@@ -1,5 +1,7 @@
 # Minesweeper
 
+![Preview](image.png)
+
 ## About the Game
 This repository features a Java-based implementation of the classic Minesweeper game. The project's architecture clearly separates the graphical user interface (`MinesweeperUI.java`) from the underlying game mechanics (`MinesweeperLogic.java`) and individual grid elements (`Tile.java`). It also incorporates custom visual assets, including titles and powerups (`Powerups.png`), to enhance the traditional gameplay experience.
 
@@ -19,4 +21,4 @@ This project includes a Gradle wrapper setup (`gradlew` and `gradlew.bat`), whic
 2. Start the application by running the provided batch script: `gradlew.bat run`.
 
 
-![Preview](image.png)
+
